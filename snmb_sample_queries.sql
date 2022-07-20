@@ -211,5 +211,4 @@ SELECT DISTINCT ON (conglomerado_muestra.id) conglomerado_muestra.id,
      LEFT JOIN dest_2012gw ON st_intersects(sitio_muestra_geometria_wgs84.the_geom, dest_2012gw.the_geom)
      LEFT JOIN muni_2012gw ON st_intersects(sitio_muestra_geometria_wgs84.the_geom, muni_2012gw.the_geom)
   WHERE sitio_muestra_geometria_wgs84.sitio_numero::text = 'Centro'::text
-  ORDER BY conglomerado_muestra.id, anp_agosto12gw.id_anp, muni_2012gw.cve_mun, dest_2012gw.cve_ent
-WITH DATA;
+  ORDER BY conglomerado_muestra.id, anp_agosto12gw.id_anp, muni_2012gw.cve_mun, dest_2012gw.cve_ent;
