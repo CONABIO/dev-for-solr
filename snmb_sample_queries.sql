@@ -36,7 +36,7 @@ SELECT conglomerado_muestra.id AS conglomerado_muestra_id,
             archivo_camara.numero_individuos,
             archivo_camara.archivo AS archivo_nombre_filesystem
            FROM archivo_camara
-          WHERE archivo_camara.archivo::text !~ similar_escape('_*._*._*._*._*'::text, NULL::text)) tabla_aux ON camara.id = tabla_aux.camara_id
+          WHERE archivo_camara.archivo::text !~ similar_escape('_*._*._*._*._*'::text, NULL::text)) tabla_aux ON camara.id = tabla_aux.camara_id;
 
 
 
@@ -67,7 +67,7 @@ SELECT conglomerado_muestra.id AS conglomerado_muestra_id,
             archivo_conteo_ave.archivo,
             archivo_conteo_ave.archivo AS archivo_nombre_filesystem
            FROM archivo_conteo_ave
-          WHERE archivo_conteo_ave.archivo::text !~ similar_escape('_*._*._*._*._*'::text, NULL::text)) tabla_aux ON conteo_ave.id = tabla_aux.conteo_ave_id
+          WHERE archivo_conteo_ave.archivo::text !~ similar_escape('_*._*._*._*._*'::text, NULL::text)) tabla_aux ON conteo_ave.id = tabla_aux.conteo_ave_id;
 
 
           ----- archivo grabadora
@@ -129,7 +129,7 @@ UNION
             archivo_grabadora.es_audible,
             archivo_grabadora.archivo AS archivo_nombre_filesystem
            FROM archivo_grabadora
-          WHERE archivo_grabadora.archivo::text !~ similar_escape('_*._*._*._*._*'::text, NULL::text)) tabla_aux ON grabadora.id = tabla_aux.grabadora_id
+          WHERE archivo_grabadora.archivo::text !~ similar_escape('_*._*._*._*._*'::text, NULL::text)) tabla_aux ON grabadora.id = tabla_aux.grabadora_id;
   WHERE tabla_aux.es_audible = 'F'::bpchar
 
 
@@ -158,7 +158,7 @@ UNION
    FROM conglomerado_muestra_coords_wgs84_cop13
      JOIN archivo_camara_filesystem ON conglomerado_muestra_coords_wgs84_cop13.id = archivo_camara_filesystem.conglomerado_muestra_id
   WHERE archivo_camara_filesystem.presencia = 'T'::bpchar AND conglomerado_muestra_coords_wgs84_cop13.anp_nombre_oficial IS NULL AND archivo_camara_filesystem.archivo_nombre_filesystem ~~* '%.jp%'::text
-  GROUP BY archivo_camara_filesystem.nombre_cientifico, conglomerado_muestra_coords_wgs84_cop13.fecha_visita, conglomerado_muestra_coords_wgs84_cop13.lat, conglomerado_muestra_coords_wgs84_cop13.lon, conglomerado_muestra_coords_wgs84_cop13.estado, conglomerado_muestra_coords_wgs84_cop13.municipio, conglomerado_muestra_coords_wgs84_cop13.anp_nombre_oficial, conglomerado_muestra_coords_wgs84_cop13.id, conglomerado_muestra_coords_wgs84_cop13.nombre, conglomerado_muestra_coords_wgs84_cop13.monitoreo_tipo
+  GROUP BY archivo_camara_filesystem.nombre_cientifico, conglomerado_muestra_coords_wgs84_cop13.fecha_visita, conglomerado_muestra_coords_wgs84_cop13.lat, conglomerado_muestra_coords_wgs84_cop13.lon, conglomerado_muestra_coords_wgs84_cop13.estado, conglomerado_muestra_coords_wgs84_cop13.municipio, conglomerado_muestra_coords_wgs84_cop13.anp_nombre_oficial, conglomerado_muestra_coords_wgs84_cop13.id, conglomerado_muestra_coords_wgs84_cop13.nombre, conglomerado_muestra_coords_wgs84_cop13.monitoreo_tipo;
 
 
 
@@ -177,7 +177,7 @@ SELECT tabla_aux.sitio_muestra_id,
             (abs(sitio_muestra.lon_grado::double precision) + abs(sitio_muestra.lon_min::double precision / 60.0::double precision) + abs(sitio_muestra.lon_seg / 3600.0::double precision)) * '-1.0'::numeric::double precision AS lon,
             abs(sitio_muestra.lat_grado::double precision) + abs(sitio_muestra.lat_min::double precision / 60.0::double precision) + abs(sitio_muestra.lat_seg / 3600.0::double precision) AS lat
            FROM sitio_muestra
-          WHERE sitio_muestra.elipsoide::text = 'WGS84'::text) tabla_aux
+          WHERE sitio_muestra.elipsoide::text = 'WGS84'::text) tabla_aux;
 
 
 ----- conglomerado muestra geometria
