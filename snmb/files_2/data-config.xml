@@ -2,16 +2,16 @@
 
   <dataSource type="JdbcDataSource" name="snmb" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/snmb_development" user="alfresco" password="alfresco" />
   <dataSource type="JdbcDataSource" name="zendro" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/zendro_development" user="alfresco" password="alfresco" />
-  <document name="new_document">
-     <entity name="images_1" dataSource="zendro" query="SELECT a.label, i.url, i.id, i.date_captured, i.latitude, i.longitude, i.monitoring_type, i.anp FROM IMAGES i  LEFT JOIN  ANNOTATIONS a ON a.image_id=i.id;">
-    <field column="id" name="id"/>
-    <field column="date_captured" name="date_captured"/>
-    <field column="url" name="url"/>
+  <document name="images">
+
+    <entity name="images_2" dataSource="zendro" query="SELECT a.label, i.latitude, i.longitude, i.anp, i.date_captured FROM IMAGES i  LEFT JOIN  ANNOTATIONS a ON a.image_id=i.id;">
+    <field column="label" name="label"/>
     <field column="latitude" name="latitude"/>
     <field column="longitude" name="longitude"/>
-    <field column="monitoring_type" name="monitoring_type"/>
     <field column="anp" name="anp"/>
-    <field column="label" name="label"/>
-    </entity> 
-  </document>
-</dataConfig>
+    <field column="date_captured" name="date_captured"/>
+    </entity>
+
+
+    </document>
+ </dataConfig>
