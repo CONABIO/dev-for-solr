@@ -128,14 +128,11 @@
 
 
     <field name="date_captured"  type="string" indexed="true" stored="true"/>
-    <field name="url"  type="string" indexed="true" stored="true"/>
     <field name="latitude"  type="pint" indexed="true" stored="true"/>
     <field name="longitude"  type="pint" indexed="true" stored="true"/>
-    <field name="monitoring_type"  type="string" indexed="true" stored="true"/>
     <field name="anp"  type="string" indexed="true" stored="true"/>
     <field name="label"  type="string" indexed="true" stored="true"/>
-
-    <!-- Dynamic field definitions allow using convention over configuration
+	<!-- Dynamic field definitions allow using convention over configuration
        for fields via the specification of patterns to match field names.
        EXAMPLE:  name="*_i" will match any field ending in _i (like myid_i, z_i)
        RESTRICTION: the glob-like pattern in the name attribute must have a "*" only at the start or the end.  -->
