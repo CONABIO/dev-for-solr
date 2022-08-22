@@ -1,0 +1,35 @@
+<dataConfig>
+  <dataSource type="JdbcDataSource" name="zendro" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5434/zendro_development" user="postgres" password="postgres" />
+  <document name="sipecam_document">
+    <entity name="people_downloads" dataSource="zendro"  query="select distinct name, last_name, institution, email from people_downloads;">
+      <field column="name" />
+      <field column="last_name" />
+      <field column="institution" />
+      <field column="email" />
+    </entity>
+    <entity name="imagenes" dataSource="zendro"  query="select 'imagenes' as base, &quot;Id_Ejemplar&quot;, &quot;Archivo&quot;, &quot;Familia&quot;, &quot;Genero&quot;, &quot;Especie&quot; from imagenes;">
+      <field column="base" />
+      <field column="Id_Ejemplar" />
+      <field column="Archivo" />
+      <field column="Familia" />
+      <field column="Genero" />
+      <field column="Especie" />
+    </entity>
+    <entity name="audios" dataSource="zendro" query="select 'audios' as base, &quot;Id_Ejemplar&quot;, &quot;Id_Grabacion&quot;, &quot;Familia&quot;, &quot;Genero&quot;, &quot;Especie&quot; from audios;">
+      <field column="base" />
+      <field column="Id_Ejemplar" />
+      <field column="Id_Grabacion" />
+      <field column="Familia" />
+      <field column="Genero" />
+      <field column="Especie" />
+    </entity>
+    <entity name="join_images_audios" dataSource="zendro" query="select imagenes.&quot;Id_Ejemplar&quot;, imagenes.&quot;Archivo&quot;, imagenes.&quot;Familia&quot;, imagenes.&quot;Genero&quot;, imagenes.&quot;Especie&quot;, audios.&quot;Id_Grabacion&quot;, audios.&quot;Familia&quot;, audios.&quot;Genero&quot;, audios.&quot;Especie&quot; FROM imagenes INNER JOIN audios ON imagenes.&quot;Id_Ejemplar&quot;=audios.&quot;Id_Ejemplar&quot;;">
+      <field column="Id_Ejemplar" />
+      <field column="Archivo" />
+      <field column="Familia" />
+      <field column="Genero" />
+      <field column="Especie" />
+      <field column="Id_Grabacion" />
+    </entity>
+  </document>
+</dataConfig>

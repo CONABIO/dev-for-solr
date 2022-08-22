@@ -1,0 +1,21 @@
+<dataConfig>
+<dataSource type="JdbcDataSource" name="zendro" driver="org.postgresql.Driver" url="jdbc:postgresql://localhost:5432/zendro_development" user="postgres" password="postgres" />
+<document name="sipecam_document">
+<entity name="files" dataSource="zendro"  query="select url, id_alfresco, storage, deployment_id, type, product_ids from files;">
+<field column="url" />
+<field column="id_alfresco"  />
+<field column="storage"  />
+<field column="deployment_id"  />
+<field column="type"  />
+<field column="product_ids"  />
+</entity>
+<entity name="monitors" dataSource="zendro"  query="select first_name, last_name, second_last_name, contact, cumulus_id, visit_ids from monitors;">
+<field column="first_name" name="first_name"/>
+<field column="last_name" name="last_name" />
+<field column="second_last_name" name="second_last_name" />
+<field column="contact" name="contact" />
+<field column="cumulus_id" name="cumulus_id" />
+<field column="visit_ids" name="visit_ids" />
+</entity>
+</document>
+</dataConfig>
