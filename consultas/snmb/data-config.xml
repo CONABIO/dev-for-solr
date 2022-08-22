@@ -1,0 +1,26 @@
+<dataConfig>
+ <dataSource type="JdbcDataSource" name="snmb" driver="org.postgresql.Driver" url="jdbc:postgresql://172.16.1.67:5434/snmb_development" user="postgres" password="000999000." />
+ <document name="snmb_document">
+     <entity name="conglomerado_muestra" dataSource="snmb" query="SELECT * FROM conglomerado_muestra;">
+      <field column="nombre" name="nombre" />
+      <field column="fecha_visita" name="fecha_visita" />
+      <field column="tipo" name="tipo" />
+      <field column="estado" name="estado" />
+      <field column="municipio" name="municipio" />
+      <field column="institucion" name="institucion" />
+      <field column="monitoreo_tipo" name="monitoreo_tipo" />
+    </entity>
+    <entity name="archivo_camara" dataSource="snmb" query="SELECT * FROM archivo_camara_filesystem;">
+      <field column="id" name="id" />
+      <field column="camara_id" name="camara_id" />
+      <field column="archivo_nombre_original" name="archivo_nombre_original" />
+      <field column="archivo" name="archivo" />
+      <field column="presencia" name="presencia" />
+      <field column="nombre_comun" name="nombre_comun" />
+      <field column="nombre_cientifico" name="nombre_cientifico" />
+      <field column="numero_individuoes" name="nombre_individuos" />
+      <field column="archivo_nombre_filesystem" name="archivo_nombre_filesystem" />
+      <field column="archivo_ruta_filesystem" name="archivo_ruta_filesystem" />
+    </entity>
+  </document>
+</dataConfig>

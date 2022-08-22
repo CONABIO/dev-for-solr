@@ -1,0 +1,18 @@
+<!-- omiranda: Indexando para los datos del snmb  -->
+    <field name="nombre" type="string" indexed="true" stored="true" />
+    <field name="fecha_visita" type="string" indexed="true" stored="true" />
+    <field name="tipo" type="string" indexed="true" stored="true" />
+    <field name="estado" type="string" indexed="true" stored="true" />
+    <field name="municipio" type="string" indexed="true" stored="true" />
+    <field name="institucion" type="string" indexed="true" stored="true" />
+    <field name="monitoreo_tipo" type="string" indexed="true" stored="true" />
+    <field name="conglomerado_muestra" type="string" indexed="true" stored="true" />
+    <field name="camara_id" type="string" indexed="true" stored="true" />
+    <field name="archivo_nombre_original" type="string" indexed="true" stored="true" />
+    <field name="archivo" type="string" indexed="true" stored="true" />
+    <field name="presencia" type="string" indexed="true" stored="true" />
+    <field name="nombre_comun" type="string" indexed="true" stored="true" />
+    <field name="nombre_cientifico" type="string" indexed="true" stored="true" />
+    <field name="numero_individuos" type="string" indexed="true" stored="true" />
+    <field name="archivo_nombre_filesystem" type="string" indexed="true" stored="true" />
+    <field name="archivo_ruta_filesystem" type="string" indexed="true" stored="true" />
