@@ -14,5 +14,6 @@ El repositorio está ordenado de la siguiente manera y se recomienda explorarlo 
 │   ├── alfresco      <- Configuración y consultas para la fuente de datos de Alfresco.
 │   ├── snmb          <- Configuración y consultas para las tablas de zendro correspondientes a snmb.
 │   └── sonozotz      <- Configuración y consultas para las tablas de zendro correspondientes a sonozotz.
+├── python            <- Uso de solr a través de python.
 └── README.md         
 ```
