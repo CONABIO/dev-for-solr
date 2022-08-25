@@ -136,7 +136,7 @@ Si todo está bien, el `SolrCore Initialization Failures` de la página de inici
 
 Nos vamos a la pestaña de Dataimport dentro de nuestro core
 
-(imagen)
+![solr1](https://user-images.githubusercontent.com/3290689/186721691-960ee527-8051-4e35-a8b6-c07dd04638d0.png)
 
 En la sección de `Entity`, seleccionamos el *entity* del cual queremos hacer nuestra importación de datos. En este caso,  en el `data-config.xml` lo nombramos `images_1`, seleccionamos `Auto-refresh Status` para ver el status automáticamente y  presionamos el botón de `execute`.
 
@@ -154,7 +154,7 @@ En la sección de `start, rows` podemos hacer una selección del número de elem
 
 En la sección de `fl` podemos hacer una subselección de los campos que necesitamos para nuestro *query*. Por ejemplo, si solo necesitamos el `url` y el `id`, indicamos: `url, id`.
 
-(imagen)
+![solr2](https://user-images.githubusercontent.com/3290689/186721722-59627ab9-43ca-48bb-89a9-d7456f05c221.png)
 
 En caso de necesitar eliminar los datos de nuestro core, seleccionamos la sección de `Documents`, document type: `xml`, pegamos el siguiente documento y seleccionamos `submit document`:
 
