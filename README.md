@@ -1,6 +1,6 @@
 # Objetivo 📋
 
-El objetivo de este repositorio es documentar el uso de Solr para crear consultas de las distintas fuentes de datos que componen el proyecto SipeCam en CONABIO.
+El objetivo de este repositorio es documentar el uso de Solr para crear consultas de las distintas fuentes de datos que componen el proyecto SipeCam en CONABIO. Las fuentes pueden ser bases de datos relacionales de PostgreSQL o un Solr con información proveniente de Alfresco.
 
 ---
 
