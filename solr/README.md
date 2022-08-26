@@ -156,11 +156,15 @@ En la sección de `fl` podemos hacer una subselección de los campos que necesit
 
 ![solr2](https://user-images.githubusercontent.com/3290689/186721722-59627ab9-43ca-48bb-89a9-d7456f05c221.png)
 
+# Eliminar datos de core
+
 En caso de necesitar eliminar los datos de nuestro core, seleccionamos la sección de `Documents`, document type: `xml`, pegamos el siguiente documento y seleccionamos `submit document`:
 
 ```
 <delete><query>*:*</query></delete>
 ```
+
+# Video referencias
 
 
 
