@@ -166,7 +166,11 @@ En caso de necesitar eliminar los datos de nuestro core, seleccionamos la secci√
 
 # Video referencias
 
+[1](https://drive.google.com/file/d/1jUWqrw7ti_Dn25VAA_isDK-LKWQkVBHB/view?usp=sharing)
 
+[2](https://drive.google.com/file/d/1UPw-djcAIdCQE4GAAMlW-hXEgvzrgn4U/view?usp=sharing)
+
+[3](https://drive.google.com/file/d/1Tsupef5tkJL1LzDcrWxOk4A8IC6OyT2V/view?usp=sharing)
 
 
 
