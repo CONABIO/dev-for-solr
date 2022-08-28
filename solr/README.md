@@ -68,7 +68,7 @@ Yo le llamaré `data-config.xml`, sin embargo, le puedes otorgar el nombre que d
 
 ## 8.	MANAGED-SCHEMA: 
 
-En nuestro `managed-schema` vamos a declarar los campos que se utilizarán. Indicando el tipo de campo que existe. Muy importante que estos *field names* sean los mismos que se utilizarán en los *field columns* del archivo `data-config`.
+En nuestro `managed-schema` vamos a declarar los campos que se utilizarán. Indicando el tipo de campo que existe. Muy importante que estos *field names* sean los mismos que se utilizarán en los *field columns* del archivo `data-config`. Se debe ser muy cuidadoso de no incluir campos repetidos e investigar el tipo de datos que se manejan en Solr, por ejemplo, los números se declaran como tipo 'pint' y no como 'integer' o 'double' como se hace tradicionalmente en SQL.
 
 ```
     <field name="date_captured"  type="string" indexed="true" stored="true"/>
@@ -118,6 +118,8 @@ Va a estar contenido por un *data source*, que es la conexión que se hará con 
   </document>
 </dataConfig>
 ```
+
+Si se desean importar datos de otras tablas es necesario definir nuevas entidades con sus respectivos campos. 
 
 ## 11. Una vez que se hayan hecho las configuraciones necesarias, vamos a apagar Solr y reiniciarlo ejecutando los siguientes comandos:
 
