@@ -53,7 +53,8 @@ collection = "alfresco" #Nombre del core
 qt         = "select"
 url        = 'http://' + host + ':' + port + '/solr/' + collection + '/' + qt + '?' #creación de url
 q          = "q=sipecam_CumulusName:95"
-fl         = "fl=[cached]&indent=on"
+fl         = ""
+fl         = fl + ",[cached]&indent=on"
 wt         = "wt=json"
 group      = "group=true"
 groupf     = "group.field=TYPE"
@@ -89,11 +90,13 @@ print(response['grouped']['TYPE']['groups'])
 
 
 ```python
-q          = "q=sipecam_CumulusName:95%20AND%20sipecam_EcosystemsName:Bosques%20templados"
-fl         = "fl=sipecam_EcosystemsName,id,DBID,%20[cached]&indent=on"
+q          = "q=sipecam_CumulusName:95 AND sipecam_EcosystemsName:Bosques templados"
+fl         = "fl=sipecam_EcosystemsName,id,DBID"
+fl         = fl + ",[cached]&indent=on"
 wt         = "wt=json"
 params     = [fl, q, wt] 
 p          = "&".join(params)
+p          = p.replace(' ', '%20')
 ```
 
 
@@ -107,7 +110,7 @@ else:
   response   = eval(connection.read())
 ```
 
-    <http.client.HTTPResponse object at 0x7fc1a8d979d0>
+    <http.client.HTTPResponse object at 0x7fc1a6abc0a0>
 
 
 
@@ -168,11 +171,13 @@ port       = "8983"
 collection = "alfresco" #Nombre del core
 qt         = "select"
 url        = 'http://' + host + ':' + port + '/solr/' + collection + '/' + qt + '?' #creación de url
-q          = "q=TYPE:{sipecam}audio%20AND%20sipecam_SampleRate:48000%20AND%20sipecam_CumulusName:92"
-fl         = "fl=sipecam_CumulusName,%20sipecam_NodeCategoryIntegrity,%20sipecam_NomenclatureNode,%20sipecam_SerialNumber,%20sipecam_DateDeployment,%20DBID,%20id,%20[cached]&indent=on"
+q          = "q=TYPE:{sipecam}audio AND sipecam_SampleRate:48000 AND sipecam_CumulusName:92"
+fl         = "fl=sipecam_CumulusName,sipecam_NodeCategoryIntegrity,sipecam_NomenclatureNode,sipecam_SerialNumber,sipecam_DateDeployment,DBID,id"
+fl         = fl + ",[cached]&indent=on"
 wt         = "wt=json"
 params     = [fl, q, wt] 
 p          = "&".join(params)
+p          = p.replace(' ', '%20')
 ```
 
 
@@ -186,7 +191,7 @@ else:
   response   = eval(connection.read())
 ```
 
-    <http.client.HTTPResponse object at 0x7fc1a6c88ee0>
+    <http.client.HTTPResponse object at 0x7fc1a8d6adc0>
 
 
 
@@ -280,11 +285,13 @@ pprint.pprint(response['response']['docs'])
 
 
 ```python
-q          = "q=sipecam_CumulusName:13%20OR%20sipecam_CumulusName:32%20OR%20sipecam_CumulusName:92%20OR%20sipecam_CumulusName:95%20AND%20TYPE:{sipecam}audio%20AND%20audio_sampleRate:%20[0%20TO%2048000]"
-fl         = "fl=PATH,%20sipecam*,%20[cached]&indent=on"
+q          = "q=sipecam_CumulusName:13 OR sipecam_CumulusName:32 OR sipecam_CumulusName:92 OR sipecam_CumulusName:95 AND TYPE:{sipecam}audio AND audio_sampleRate: [0 TO 48000]"
+fl         = "fl=PATH,sipecam*"
+fl         = fl + ",[cached]&indent=on"
 wt         = "wt=json"
 params     = [fl, q, wt] 
 p          = "&".join(params)
+p          = p.replace(' ', '%20')
 ```
 
 
@@ -298,7 +305,7 @@ else:
   response   = eval(connection.read())
 ```
 
-    <http.client.HTTPResponse object at 0x7fc1a860a940>
+    <http.client.HTTPResponse object at 0x7fc1a8e41f70>
 
 
 
@@ -753,10 +760,12 @@ Al finalizar el pipeline de procesamiento de video se debe asociar a cada imagen
 
 ```python
 q          = "q=cm:name:0d05d10d2939c0351a837b6bb2c53f1d_0528.mp4"
-fl         = "fl=cm_name,cm_versionType,%20cm_versionLabel,audio_sampleRate,%20sipecam*,%20[cached]&indent=on"
+fl         = "fl=cm_name,cm_versionType,cm_versionLabel,audio_sampleRate,sipecam*"
+fl         = fl + ",[cached]&indent=on"
 wt         = "wt=json"
 params     = [fl, q, wt] 
 p          = "&".join(params)
+p          = p.replace(' ', '%20')
 ```
 
 
@@ -770,7 +779,7 @@ else:
   response   = eval(connection.read())
 ```
 
-    <http.client.HTTPResponse object at 0x7fc1a8e41f70>
+    <http.client.HTTPResponse object at 0x7fc1a6abc1c0>
 
 
 
